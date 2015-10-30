@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" type="text/css" href="css/normalize.css" />
+        <link rel="stylesheet" type="text/css" href="css/component.css" />
+    </head>
+    <body>
+		<div class="container">
+                                                            <header>
+                                                                <img src="dglogo.svg"  class="logo">
+                                                                <a href="mainpage.html"><button class="enter">Log In</button></a>
+                                                                
+                                                            </header>
+			<div class="content">
+				<div id="large-header" class="large-header">
+					<canvas id="demo-canvas"></canvas>
+					<h1 class="main-title">Hi There <span class="thin"> </span></h1>
+				</div>
+                            <div class="blank">
+                           
+                            </div>
+                            <div class="data">
+                           
+                            </div>
+                            
+			</div>
+	
+		</div><!-- /container -->
+		<script src="js/TweenLite.min.js"></script>
+		<script src="js/EasePack.min.js"></script>
+		<script src="js/rAF.js"></script>
+		<script src="js/demo-1.js"></script>
+                                        <script src="js/classie.js"></script>
+                <script>
+                    function init() {
+                        window.addEventListener('scroll', function(e){
+                            var distanceY = window.pageYOffset || document.documentElement.scrollTop,
+                            shrinkOn = 300,
+                            header = document.querySelector("header");
+                            if (distanceY > shrinkOn) {
+                             classie.add(header,"sticky");
+                           } 
+                          else {
+                               if (classie.has(header,"sticky")) {
+                                    classie.remove(header,"sticky");
+                                }
+                            }
+                      });
+                    }
+                window.onload = init();
+                </script>
+  
+    </body>
+</html>

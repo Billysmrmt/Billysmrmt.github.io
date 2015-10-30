@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+  <head>
+    <style type='text/css'>
+      body{
+        margin: 0px;
+      }
+      #wipeScreen{
+        position: fixed;  
+        width: 100%;                  
+        background-color: red;
+      }
+
+      #mainScreen{
+        position: absolute;
+        background-color: blue;
+        height: 200%;
+        width: 100%;
+      }
+    </style>
+    <script type='text/javascript'>
+      var visHeight;
+      function loadConstants(){
+        visHeight = Math.ceil(document.getElementById("mainScreen").offsetHeight/2);
+        var wipeScreen = document.getElementById("wipeScreen");
+        wipeScreen.style.height = visHeight+"px";
+        wipeScreen.style.top = -visHeight+"px";
+        window.onscroll = runScroller;
+      }
+      function runScroller(){
+        document.getElementById("wipeScreen").style.top = pageYOffset-visHeight+"px";
+      }    
+    </script>        
+  </head>
+  <body onload='loadConstants()'>
+    <div id='mainScreen'></div>
+    <div id='wipeScreen'></div>  
+  </body>
+</html>
